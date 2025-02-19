@@ -122,7 +122,7 @@ Classes should explicitly declare whether a class is copyable or movable. This m
 
 ```cpp
 class Neither {
-    public:
+public:
     Neither(const Neither &other) = delete;
     Neither &operator=(const Neither &other) = delete;
 
@@ -131,7 +131,7 @@ class Neither {
 };
 
 class CopyOnly {
-    public:
+public:
     CopyOnly(const CopyOnly &other) = default;
     CopyOnly &operator=(const CopyOnly &other) = default;
 
@@ -140,7 +140,7 @@ class CopyOnly {
 };
 
 class MoveOnly {
-    public:
+public:
     MoveOnly(const MoveOnly &other) = delete;
     MoveOnly &operator=(const MoveOnly &other) = delete;
 
@@ -149,7 +149,7 @@ class MoveOnly {
 };
 
 class Both {
-    public:
+public:
     Both(const Both &other) = default;
     Both &operator=(const Both &other) = default;
 
@@ -181,26 +181,243 @@ Classes should follow the order outlined in the example below, note that empty s
 
 ```cpp
 class Foo{
-    public:
+public:
     // 1. types and aliases
     // 2. Static Constants
     // 3. Factories
     // 4. Constructors and Operators (Copy, Move, Operator Overloading)
     // 5. Destructors
     // 6. All other Member Functions
-    protected:
-    private:
+protected:
+private:
     // 7. Data Members
 };
 ```
 
 ## Functions
 
+Functions should be considered completely black box to any calling code. This means that all behavior should be handled and no hard breaks should occur. That being said, it is highly encouraged to write small and focused functions. This is to allow for easier/more concise debugging.
+
+### Inputs and Outputs
+
+It is preferred that outputs from a function are obtained through the return value rather than output parameters if possible. Avoid returning raw pointers as much as possible.
+
+### Function Overloading and Default Arguments
+
+Overloading functions should be done only if a reader can understand what is going on without needing to know which overload is being used. Default arguments serve a similar purpose to function overloading, thus they should only be used when they provide an increase in readability over function overloading. When in doublt, use function overloading.
+
+## C++ Features
+
+### Casting
+
+We prefer using C++ style casts (e.g. `static_cast<float>(double_value)`) over the C style cast (e.g. `(int)x = 1.3`).
+
+### Incrementing
+
+We prefer using the prefix increment form unless you explicitly need postfix semantics. In other words, use `++i` instead of `i++` whenever possible.
+
+### Portability
+
+Write code that can be run on any type of architecture. **DO NOT** rely on CPU features.
+
+### Macros
+
+Avoid macros. Instead, write inline functions, enums, and const variables.
+
+### Lambdas
+
+Always use explicit capture when the labmda will leave the current scope. Otherwise lambdas are encouraged, especially when being used with `std::function` and `std::bind` to create generalized callback mechanisms.
+
 ## Templates
+
+Try to avoid template metaprogramming when possible. That being said, templates make C++ extremely powerful and are the only way many projects have been able to be implemented. The problem lies in the fact that templates are well understood by a very very small portion of the community and extremely difficult to debug. Not to mention, templates become a very easy temptation to become overly clever and miss important details.
+
+If you decide to use template programming, do as much as possible to simplify the code as much as possible. In addition, make sure to well document the code and hide it as much as possible inside implementation details.
+
+### Aliases
+
+When possible, `using` is prefered to `typedef` because it is more consistent with the rest of C++ and works with templates.
+
+### Switch Statements
+
+All switch statements should have a default case. Note fallthrough statements using the `[[fallthrough]]` attribute.
+
+## Inclusive Language
+
+In all code, including naming and comments, use inclusive language and avoid terms that other programmers might find disrespectful or offensive (such as "master" and "slave", "blacklist" and "whitelist", or "redline"), even if the terms also have an ostensibly neutral meaning. Similarly, use gender-neutral language unless you're referring to a specific person (and using their pronouns). For example, use "they"/"them"/"their" for people of unspecified gender (even when singular), and "it"/"its" for software, computers, and other things that aren't people.
 
 ## Naming
 
+Naming is arguably the most controversial part of any style guide. Yet, we recognize that naming is key to any developer quickly and easily identifying the tools they are working with. That being said, the first, most fundamental rule regarding naming is use names that describe the purpose of the object. Abbreviations are ok if its listed in sources like Wikipedia.
+
+### Naming Files
+
+Filenames should be lowercase. In addition, the default extension for any source files is `.cpp` the extension for headers is `.hpp` and the extension for files containing templates is `.tpp`. If they contain multiple words, they should be separated with underscores. Examples include:
+
+- `hello_world.cpp`
+- `my_script_header.hpp`
+- `my_template_implementations.tpp`
+
+### Naming Types
+
+Type Names should be CamelCased. That is, they should start with a capital letter and have another capital letter for each new word without any space between the words (e.g. `MyNewlyNamedClass`).
+
+```cpp
+class RespondModel {}
+struct DataContainer {}
+using MyMap = std::map<int, int>;
+enum class MyEnums{}
+```
+
+### Naming Variables
+
+Variables should be in snake case. This means they should be all lowercase with underscores between words. For private data members of a class (as all data members should be) we append an underscore.
+
+```cpp
+std::string my_variable;
+
+class MyClass{
+private:
+    std::string _my_classname;
+};
+```
+
+### Naming Functions
+
+Functions are a bit weird because they are mixed case. That being said, the vast majority of functions should be CamelCased similar to [Naming Types](#naming-types). The only exception is accessor functions (i.e. getters and setters) which may be written in snake case like their variables.
+
 ### Naming Namespaces
+
+Namespaces should follow snake case rules. Top-level namespace names should be the same as the project name and should avoid collisions with well-known top-level namespaces.
+
+### Naming Constants and Enums (and Avoiding Macros)
+
+Constants and Enumerations should take the same naming convention. That is, they are CamelCased with a leading `k` before the variable.
+
+```cpp
+enum class MyEnum {
+    kValueOne = 0,
+    kNextValue,
+    kLastValue,
+};
+
+const int kMyConstant = 10;
+```
+
+Previously, enums were named similarly to macros (i.e. fully capitalized). As we are avoiding macros in our code, we are attempting to remove the macro naming convention as well.
+
+## Comments
+
+Comments should exist throughout the code explaining any complex portion of code. That being said, commented code should not be left in files. For consistency sake, we only utilize the `//` style comment syntax due to the common acceptance.
+
+### License Comments
+
+All files should have the boilerplate outlined below:
+
+```cpp
+////////////////////////////////////////////////////////////////////////////////
+// File: <filename>                                                           //
+// Project: <project name>                                                    //
+// Created Date: <dd MMM yyyy>                                                //
+// Author: <author name>                                                      //
+// -----                                                                      //
+// Last Modified: <date>                                                      //
+// Modified By: <author name>                                                 //
+// -----                                                                      //
+// Copyright (c) 2025 Syndemics Lab at Boston Medical Center                  //
+// -----                                                                      //
+// HISTORY:                                                                   //
+// Date         By  Comments                                                  //
+// ----------   --- --------------------------------------------------------- //
+////////////////////////////////////////////////////////////////////////////////
+```
+
+### Function Comments
+
+Comments for a function should be immediately preceeding the declaration and include:
+
+- A brief description of the expected functionality
+- A list of the parameters and their expected values
+- A description of the expected return value
+
+### TODO Comments
+
+Use TODO comments for code that is temporary, a short-term solution, or good-enough but not perfect. `TODO` should be in all capital letters followed by the associated bug/task and specific anticipated addressed date.
+
+## Formatting
+
+Line length is 80 characters. Set your editor so that one tab is equal to 4 spaces. Utilize UTF-8 Encoding and LF line endings (why microsoft even uses CRLF still is beyond the writer's understanding).
+
+### Looping and Branching
+
+At a high level, looping or branching statements consist of the following components:
+
+- One or more statement keywords (e.g. if, else, switch, while, do, or for).
+- One condition or iteration specifier, inside parentheses.
+- One or more controlled statements, or blocks of controlled statements.
+
+For these statements:
+
+- The components of the statement should be separated by single spaces (not line breaks).
+- Inside the condition or iteration specifier, put one space (or a line break) between each semicolon and the next token, except if the token is a closing parenthesis or another semicolon.
+- Inside the condition or iteration specifier, do not put a space after the opening parenthesis or before the closing parenthesis.
+- Put any controlled statements inside blocks (i.e. use curly braces).
+- Inside the controlled blocks, put one line break immediately after the opening brace, and one line break immediately before the closing brace.
+
+```cpp
+if (condition) {
+    DoOneThing(); 
+    DoAnotherThing();
+} else if (int a = f(); a != 3) {  
+    DoAThirdThing(a);
+} else {
+    DoNothing();
+}
+
+while (condition) {
+    RepeatAThing();
+}
+
+do {
+    RepeatAThing();
+} while (condition);
+
+for (int i = 0; i < 10; ++i) {
+    RepeatAThing();
+}
+```
+
+### Return Statements
+
+Do not put parenthesis around return values.
+
+### Preprocessor Directives
+
+The hash mark goes at the beginning of the line, even if the code is indented.
+
+```cpp
+class MyClass {
+public:
+#if DEBUG_MODE
+    void PrintDebug();
+#endif
+};
+```
+
+### Class Format
+
+The `public`, `protected`, and `private` sections should be on the same line as the class declaration. The sub-elements should thus be indented.
+
+```cpp
+class MyClass {
+public:
+    void MyFunction();
+};
+```
+
+### Namespace Format
+
+Content in namespaces should not be indented.
 
 ## CMake
 
