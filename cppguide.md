@@ -94,7 +94,7 @@ There are several exceptions to this rule, the most common being conditional inc
 
 ### Namespaces
 
-Code should always exist in a namespace. With that, avoid using the *using-directives* (e.g. `using namespace foo`). This is to maintain readability and prevent unexpected collisions. Also do as much as possible to avoid using `inline namespace` containers. This is, again, to prevent collisions between expected namespace locations and unnecessary clutter. **NEVER** declare anything in the `std` namespace.
+Code should always exist in a namespace. With that being said, avoid *using-directives*, e.g. `using namespace foo`. This is to maintain readability and prevent unexpected name collisions. Also, do as much as possible to avoid using `inline namespace` containers. This is, again, to prevent collisions between expected namespace locations and to reduce unnecessary clutter. **NEVER** declare anything in the `std` namespace.
 
 - Namespaces should follow the respective rules on [naming namespaces](#naming-namespaces).
 - Multi-line namespaces should terminate with a comment.
