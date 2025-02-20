@@ -158,7 +158,7 @@ public:
 };
 ```
 
-The only exceptions to not including one of the four declarations are:
+The only exceptions to including one of the four declarations from above are:
 
 - The class has no private sections
 - If the class is subclass to a base class that is clearly not copyable or movable
