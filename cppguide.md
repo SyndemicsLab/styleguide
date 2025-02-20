@@ -210,7 +210,7 @@ Overloading functions should be done only if a reader can understand what is goi
 
 ### Casting
 
-We prefer using C++ style casts (e.g. `static_cast<float>(double_value)`) over the C style cast (e.g. `(int)x = 1.3`).
+We prefer using C++-style casts (e.g. `static_cast<float>(double_value)`) over the C-style cast (e.g. `(int)x = 1.3`).
 
 ### Incrementing
 
