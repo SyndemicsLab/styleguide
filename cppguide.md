@@ -104,7 +104,7 @@ Code should always exist in a namespace. With that being said, avoid *using-dire
 
 Global functions should be used *very, very rarely*. Instead, try to place non-member functions inside an unnamed namespace. All static methods that belong to a class should be closely related to the instances of the class, otherwise they should be non-member functions.
 
-If you define a nonmember function only needed in the source `.cpp` file, use internal linkage.
+If you define a non-member function only needed in the source `.cpp` file, use internal linkage.
 
 ### Local Variables
 
