@@ -204,7 +204,7 @@ It is preferred that outputs from a function are obtained through the return val
 
 ### Function Overloading and Default Arguments
 
-Overloading functions should be done only if a reader can understand what is going on without needing to know which overload is being used. Default arguments serve a similar purpose to function overloading, thus they should only be used when they provide an increase in readability over function overloading. When in doublt, use function overloading.
+Overloading functions should be done only if a reader can understand what is going on without needing to know which overload is being used. Default arguments serve a similar purpose to function overloading; thus, they should only be used when they provide an increase in readability over function overloading. When in doubt, use function overloading.
 
 ## C++ Features
 
