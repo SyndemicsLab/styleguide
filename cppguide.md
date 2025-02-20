@@ -27,7 +27,7 @@ The following files are expected to exist in the root of the repository:
 - `LICENSE`
 - `README.md`
 
-This structure is loosely based on the pitchfork repo structure found [here](https://api.csswg.org/bikeshed/?force=1&url=https://raw.githubusercontent.com/vector-of-bool/pitchfork/develop/data/spec.bs).
+This structure is loosely based on the pitchfork repo structure found [here](https://raw.githubusercontent.com/vector-of-bool/pitchfork/refs/heads/develop/data/spec.bs).
 
 ## Headers
 
