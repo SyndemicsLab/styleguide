@@ -70,8 +70,8 @@ The order of includes should go:
 Between each of these includes should be a blank line. Thus, an example set of includes for `simdemics/src/models/RespondImpl.hpp` would look like:
 
 ```cpp
-#ifndef SIMDEMICS_MODELS_REPSONDIMPL_HPP_
-#define SIMDEMICS_MODELS_REPSONDIMPL_HPP_
+#ifndef SIMDEMICS_MODELS_RESPONDIMPL_HPP_
+#define SIMDEMICS_MODELS_RESPONDIMPL_HPP_
 
 #include <simdemics/models/Respond.hpp>
 
