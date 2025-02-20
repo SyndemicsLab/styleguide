@@ -406,7 +406,7 @@ public:
 
 ### Class Format
 
-The `public`, `protected`, and `private` sections should be on the same line as the class declaration. The sub-elements should thus be indented.
+The `public`, `protected`, and `private` sections should be on the same indentation depth as the class declaration. The sub-elements should thus be indented.
 
 ```cpp
 class MyClass {
