@@ -85,7 +85,7 @@ Between each of these includes should be a blank line. Thus, an example set of i
 
 ...
 
-#endif // SIMDEMICS_MODELS_REPSONDIMPL_HPP_
+#endif // SIMDEMICS_MODELS_RESPONDIMPL_HPP_
 ```
 
 There are several exceptions to this rule. The most common being conditional includes of headers. Just make sure to keep this include localized.
