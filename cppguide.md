@@ -55,7 +55,7 @@ All project header files should be included without the use of UNIX directory al
 
 #### Note on Forward Declarations
 
-Try to avoid forward declarations when possible. This is specifically because of potentially undefined behavior and difficulty with linkage errors during compile time. While not forbidden, it is highly recommended against.
+Try to avoid forward declarations when possible. This is specifically because of potentially undefined behavior and difficulty with linkage errors during compile time. While not forbidden, it is highly discouraged.
 
 ### Order of Includes
 
