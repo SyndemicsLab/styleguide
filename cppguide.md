@@ -1,6 +1,6 @@
 # Syndemics Lab C++ Style Guide
 
-The motivation for the Syndemics Lab C++ Style Guide is due to public deployment of code. With an intent to distribute and utilize open source software, this style guide intends to regularize the syntax for easy uptake and transition between repositories. It is designed to be maintained by the `.clang-format` found in each project and all pull request workflow CI/CD checks require passing the style check before approval. This guide is heavily based off the [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html) while modifying a few style changes to make our code easier to use/read.
+The motivation for the Syndemics Lab C++ Style Guide is public deployment and open contribution to our code. We intend to distribute and utilize open source software and this style guide is the standard for C++ syntax in our repositories. We hope this style guide makes contribution to our projects easy. Style within source files is designed to be maintained by the [`.clang-format`](https://clang.llvm.org/docs/ClangFormat.html) found in each project. In addition, all pull request workflow CI/CD checks require passing the style check before approval. This guide is heavily based off the [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html) with a handful of modifications per the Syndemics Lab developers' preferences.
 
 ## C++ Version Support
 
@@ -260,7 +260,7 @@ Filenames should be lowercase. In addition, the default extension for any source
 
 ### Naming Types
 
-Type Names should be CamelCased. That is, they should start with a capital letter and have another capital letter for each new word without any space between the words (e.g. `MyNewlyNamedClass`).
+Type Names should be PascalCased. That is, they should start with a capital letter and have another capital letter for each new word without any space between the words (e.g. `MyNewlyNamedClass`).
 
 ```cpp
 class RespondModel {}
@@ -308,7 +308,7 @@ Previously, enums were named similarly to macros (i.e. fully capitalized). As we
 
 ## Comments
 
-Comments should exist throughout the code explaining any complex portion of code. That being said, commented code should not be left in files. For consistency sake, we only utilize the `//` style comment syntax due to the common acceptance.
+Comments should exist throughout the code explaining any complex portion of code. That being said, old commented-out code should not be left in files. For consistency sake, we only utilize the `//` style comment syntax due to the common acceptance.
 
 ### License Comments
 
@@ -419,6 +419,16 @@ public:
 
 Content in namespaces should not be indented.
 
-## CMake
+## C++ Adjacent Tools
+
+### CMake
 
 All projects are expected to utilize CMake with a version targeting at least 3.20. This version is regularly updated as more CMake versions are added.
+
+### Doxygen
+
+TODO
+
+### Docker
+
+TODO
