@@ -230,7 +230,7 @@ Always use explicit capture when the labmda will leave the current scope. Otherw
 
 ## Templates
 
-Try to avoid template metaprogramming when possible. That being said, templates make C++ extremely powerful and are the only way many projects have been able to be implemented. The problem lies in the fact that templates are well understood by a very very small portion of the community and extremely difficult to debug. Not to mention, templates become a very easy temptation to become overly clever and miss important details.
+Try to avoid template metaprogramming when possible. That being said, templates make C++ extremely powerful and are the only way many projects have been able to be implemented. The problem lies in the fact that templates are well-understood by only a very small portion of the community and are extremely difficult to debug. Further, when writing templates it is very tempting to become overly clever and miss important details.
 
 If you decide to use template programming, do as much as you can to simplify the code as much as possible. In addition, make sure to document the code well and hide it as much as possible inside implementation details.
 
