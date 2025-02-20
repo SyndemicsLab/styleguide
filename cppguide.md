@@ -334,7 +334,7 @@ All files should have the boilerplate outlined below:
 
 ### Function Comments
 
-Comments for a function should be immediately preceeding the declaration and include:
+Comments for a function should be immediately preceding the declaration and include:
 
 - A brief description of the expected functionality
 - A list of the parameters and their expected values
