@@ -325,10 +325,6 @@ All files should have the boilerplate outlined below:
 // Modified By: <author name>                                                 //
 // -----                                                                      //
 // Copyright (c) 2025 Syndemics Lab at Boston Medical Center                  //
-// -----                                                                      //
-// HISTORY:                                                                   //
-// Date         By  Comments                                                  //
-// ----------   --- --------------------------------------------------------- //
 ////////////////////////////////////////////////////////////////////////////////
 ```
 
