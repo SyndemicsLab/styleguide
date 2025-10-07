@@ -174,7 +174,7 @@ As mentioned above, most of our code syntax follows the tidyverse standard. Howe
 
 ### Indentation
 
-The first, and perhaps most prominent difference is we utilize 4-space indentation rather than the traditional 2-space indentation. This is because Python and C++ standards both advice 4 spaces.
+The first, and perhaps most prominent difference is we utilize 4-space indentation rather than the traditional 2-space indentation. This is because Python and C++ standards both advise 4 spaces.
 
 ### Function and Variable Naming
 
