@@ -9,3 +9,47 @@ Our notebooks are built using [Quarto](https://quarto.org/). This is so that the
 ## Repo Structure
 
 Notebook repositories follow a very particular structure. There is a public template [provided](https://github.com/SyndemicsLab/analysis-template-R) on our lab GitHub for R notebook repositories if so desired.
+
+All repositories must have the following directories:
+
+- `notebooks/` - Where the analysis projects take place
+- `src/` - can be replaced with R, python, or a language if only using a specific language with the notebooks
+- `data/raw/` - Where to store raw data. Should have a `.gitkeep` file and the rest of the folder listed in the `.gitignore` to keep data from being folded into the repo.
+- `data/processed/` - Where to store processed data. Should have a `.gitkeep` file and the rest of the folder listed in the `.gitignore` to keep data from being folded into the repo.
+- `output/` - Where to store results printed from the analysis. Should have a `.gitkeep` file and the rest of the folder listed in the `.gitignore` to keep data from being folded into the repo.
+
+The following files are expected to exist in the root of the repository:
+
+- `.gitignore`
+- `_quarto.yml`
+- `LICENSE.md`
+- `README.md`
+
+If this is an R notebook analysis, we also expect:
+
+- `.lintr.R`
+- `PROJECT_NAME.Rproj`
+
+## Notebooks
+
+All notebooks should be combinations of a single programming language and markdown. Every programming cell should be immediately preceeded by a markdown cell explaining the behavior and intention of the code.
+
+### Setup Cell
+
+The top of all notebooks should be configured to work with Quarto. They should include the notebook title, the author, and the date in YYYY-MM-DD format. The date should reflect the day of the last update.
+
+```yml
+---
+title: "My Quarto Notebook"
+author: "Matthew Carroll"
+date: "2025-10-08"
+---
+```
+
+### Markdown
+
+All markdown cells should follow the [GitHub Markdown Style Guide](https://google.github.io/styleguide/docguide/style.html).
+
+### Programming Languages
+
+All programming cells should follow standard syntax rules laid out in their own style guide. The difference inside notebooks is that instead of building for a package, all code should be written as a script with global variables.
