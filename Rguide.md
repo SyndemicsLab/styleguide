@@ -178,15 +178,16 @@ The first, and perhaps most prominent difference is we utilize 4-space indentati
 
 ### Function and Variable Naming
 
-No functions nor variables should EVER use the `.` in their name. The `.` is used by Object Oriented Languages to denote object ownership and thus transitioning between languages makes it incredibly difficult to parse. Instead, use the standard underscore, `_`. This is referred to as "snake case."
+No functions nor variables should EVER use the `.` in their name. The `.` is used by Object Oriented Languages to denote object ownership and thus transitioning between languages makes it incredibly difficult to parse. Instead, use the standard underscore, `_`. This is referred to as "snake case." Additionally, variables and functions should be interpretable based on their names.
 
 ```r
 # Good
-my_function <- function(x) # No dots
 get_addition <- function(x_1, x_2) # Even in variables
 
 # Bad
-my.function <- function(x) # Please don't use dots
+my_function <- function(x_1, x_2) # Bad function name
+get_addition <- function(no, hi) # Bad variable names
+get.addition <- function(x_1, x_2) # Please don't use dots
 get_addition <- function(x.1, x.2) # It gives software engineers nightmares
 ```
 
