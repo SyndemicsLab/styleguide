@@ -1,6 +1,6 @@
 # Syndemics Lab Notebook Project Style Guide
 
-The motivation for the Syndemics Lab Notebook Project Style Guide is public deployment and open contribution to our code. We intend to distribute and utilize open source software and this style guide is the standard for analysis notebook projects in our repositories. We hope this style guide makes contribution to our projects easy. This style guide in particular focuses less on syntaxes (although it does contain some unqiue details) but instead more on the project setup. This is because both python and R can be used in our notebook projects. Thus, all R and Python style guide syntax rules apply here too.
+The motivation for the Syndemics Lab Notebook Project Style Guide is public deployment and open contribution to our code. We intend to distribute and utilize open source software and this style guide is the standard for analysis notebook projects in our repositories. We hope this style guide makes contribution to our projects easy. This style guide in particular focuses less on syntaxes (although it does contain some unqiue details) but instead more on the project setup. This is because both Python and R can be used in our notebook projects. Thus, all R and Python style guide syntax rules apply here too.
 
 ## Project Tooling
 
@@ -13,7 +13,7 @@ Notebook repositories follow a very particular structure. There is a public temp
 All repositories must have the following directories:
 
 - `notebooks/` - Where the analysis projects take place
-- `src/` - can be replaced with R, python, or a language if only using a specific language with the notebooks
+- `src/` - can be replaced with R, Python, or a language if only using a specific language with the notebooks
 - `data/raw/` - Where to store raw data. Should have a `.gitkeep` file and the rest of the folder listed in the `.gitignore` to keep data from being folded into the repo.
 - `data/processed/` - Where to store processed data. Should have a `.gitkeep` file and the rest of the folder listed in the `.gitignore` to keep data from being folded into the repo.
 - `output/` - Where to store results printed from the analysis. Should have a `.gitkeep` file and the rest of the folder listed in the `.gitignore` to keep data from being folded into the repo.
@@ -32,7 +32,7 @@ If this is an R notebook analysis, we also expect:
 
 ## Notebooks
 
-All notebooks should be combinations of a single programming language and markdown. Every programming cell should be immediately preceeded by a markdown cell explaining the behavior and intention of the code.
+All notebooks should be combinations of a single programming language and Markdown. Every programming cell should be immediately preceeded by a Markdown cell explaining the behavior and intention of the code.
 
 ### Setup Cell
 
@@ -48,7 +48,7 @@ date: "2025-10-08"
 
 ### Markdown
 
-All markdown cells should follow the [GitHub Markdown Style Guide](https://google.github.io/styleguide/docguide/style.html).
+All Markdown cells should follow the [GitHub Markdown Style Guide](https://google.github.io/styleguide/docguide/style.html).
 
 ### Programming Languages
 
