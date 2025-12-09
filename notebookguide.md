@@ -53,8 +53,8 @@ All Markdown cells should follow the [GitHub Markdown Style Guide](https://googl
 #### Mathematics
 
 In addition to the GitHub Markdown style requirements, we require that any math
-outside of code blocks be contained in inline LaTeX math notation (\$...\$ or
-\$\$...\$\$).
+outside of code blocks be contained in inline LaTeX math notation (`$...$` or
+`$$...$$`).
 
 ### Programming Languages
 
