@@ -50,6 +50,11 @@ date: "2025-10-08"
 
 All Markdown cells should follow the [GitHub Markdown Style Guide](https://google.github.io/styleguide/docguide/style.html).
 
+#### Mathematics
+
+In addition to the GitHub Markdown style requirements, we require that any math
+outside of code blocks be contained in inline LaTeX math notation.
+
 ### Programming Languages
 
 All programming cells should follow standard syntax rules laid out in their own style guide. The difference inside notebooks is that instead of building for a package, all code should be written as a script with global variables.
