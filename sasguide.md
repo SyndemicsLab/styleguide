@@ -25,6 +25,12 @@ Further Details can be found here [PHD_Data Analysis Guidelines](https://bmcorg.
 
 ## Packages
 
+1. R Packages can be incorporated in the SAS code using PROC IML. 
+2. R version 4.2.0  is installed in the SAS environment.
+3. Below is the comprehensive list of the R Packages approved by DPH in their SAS environment.
+
+[R Packages in PHD SAS Environment](https://bmcorg.sharepoint.com/:b:/r/teams/SyndemicsLab-PHD/Shared%20Documents/PHD/Official%20Docs/PHD_Data%20Analysis%20Guidelines.pdf?csf=1&web=1&e=fuXFN5)
+
 ## Repo Structure
 
 - `sas/` - Where the SAS code goes
