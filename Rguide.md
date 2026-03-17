@@ -4,7 +4,7 @@ The motivation for the Syndemics Lab R Style Guide is public deployment and open
 
 ## R Styling Packages
 
-Our repositories are (like tidyverse) supported by [styler](https://styler.r-lib.org/) and [lintr](https://github.com/r-lib/lintr). We have a few additional changes that we add to the default lintr file for customization and operability between our language guides.
+Our repositories are (like tidyverse) supported by [air](https://posit-dev.github.io/air/) and [lintr](https://github.com/r-lib/lintr). We have a few additional changes that we add to the default lintr file for customization and operability between our language guides.
 
 ## R Scripts
 
