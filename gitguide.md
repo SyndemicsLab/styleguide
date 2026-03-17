@@ -130,6 +130,6 @@ The stage and commit commands are:
 
 ### Pull Request and Merge
 
-The final step is the pull request and merge. This focuses on moving the code edited on the branch into the main branch as a "finalized" state. This stage happens primarily on GitHub and follows the [GitHub documentation]{`https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request`}. Note, we have a template  for pull requests within our lab that require an associated task item as well as a brief description and two tasks to verify completion.
+The final step is the pull request and merge. This focuses on moving the code edited on the branch into the main branch as a "finalized" state. This stage happens primarily on GitHub and follows the [GitHub documentation]{`https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request`}. Note, we have a template for pull requests within our lab that require an associated task item as well as a brief description and two tasks to verify completion.
 
 Once the pull request (PR) is approved by a reviewer, the person who issued the PR should squash and rebase the branch onto main and delete the branch. That's all there is to it!
